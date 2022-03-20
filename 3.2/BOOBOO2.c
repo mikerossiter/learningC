@@ -6,7 +6,7 @@ int main()
     char mine[] = "Henry";
 
     printf("What is your name?");
-    gets(yours);
+    fgets(yours, 25, stdin);
     if(mine == yours)
         printf("We both have the same name!\n");
     return(0);
