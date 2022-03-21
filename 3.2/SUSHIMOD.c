@@ -7,7 +7,12 @@ int main()
     int x = 0;
 
     puts(phrase);
-    phrase[9] = 's';
+    while(ch = phrase[x])
+    {
+        if(ch == ' ')
+            phrase[x] = '-';
+        x++;
+    }
     puts(phrase);
     return(0);
 }
