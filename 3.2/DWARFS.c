@@ -4,14 +4,14 @@
 
 int main()
 {
-    char dwarf[7][8] = {
-        "bashful",
-        "doc",
-        "dopey",
-        "grumpy",
-        "happy",
-        "sneezy",
-        "sleepy",
+    char dwarf[7][2][8] = {
+        "bashful", "?",
+        "doc",     "?",
+        "dopey",   "?",
+        "grumpy",  "?",
+        "happy",   "?",
+        "sneezy",  "?",
+        "sleepy",  "?"
     };
     char input[64];
     int named=0;
@@ -35,12 +35,16 @@ int main()
 
         for(x=0;x<7;x++)
         {
-            if(strcasecmp(input,dwarf[x])==0)
-            {
-                printf("Yes! %s is right.\n",input);
-                named++;
+            if(strcmp(input,dwarf[x][0])==0)
+                if(dwarf[x][1][0]=='!')
+                    printf("You already named that dwarf!\n");
+                else
+                {
+                    printf("Yes! That is right!\n");
+                    named++;
+                    dwarf[x][1][0]='!';
+                }
             }
         }
-    }
-    return(0);
+        return(0);
 }
