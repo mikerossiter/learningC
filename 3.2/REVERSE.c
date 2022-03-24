@@ -9,7 +9,7 @@ int main()
     printf("Enter a common Earth phrase: ");
     fgets(input, 64, stdin);
 
-    puts("Here's how we say that on Backward Planet.");
+    printf("Here's how we say that on Backward Planet: ");
     size = strlen(input);
     for(c=size-1;c>=0;c--)
         putchar(input[c]);
