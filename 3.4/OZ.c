@@ -12,12 +12,12 @@ int main()
     puts("Wizard of Oz Database!\n");
 
     /* draw the table heading */
-    printf("%-15s\t%3s\t%-15s\n","Actor","Age","Role");
+    printf("%-15s %3s   %-15s\n","Actor","Age","Role");
     for(line=0;line<LINE_LENGTH;line++) putchar('-');
     putchar('\n');
 
     /* display the data */
-    printf("%-15s\t%3d\t%-15s\n",actor,age,role);
+    printf("%-15s %3d   %-15s\n",actor,age,role);
 
     return(0);
 }
