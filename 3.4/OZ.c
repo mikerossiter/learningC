@@ -18,7 +18,13 @@ int main()
         "Margaret Hamilton", 37, "Wicked Witch",
         "Frank Morgan", 49, "The Wizard"
     };
+    struct oz temp;
     int line,x;
+
+    /* Swap Margaret and Frank */
+    temp = cast[4];
+    cast[4] = cast[5];
+    cast[5] = temp;
 
     puts("Wizard of Oz Database!\n");
 
