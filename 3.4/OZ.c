@@ -1,49 +1,55 @@
 #include <stdio.h>
+#include <string.h>
 
 #define LINE_LENGTH 40
 
 int main()
 {
-    char actor1[] = "Judy Garland";
-    int age1 = 17;
-    char role1[] = "Dorothy";
+    struct oz {
+        char actor[18];
+        int age;
+        char role[16];
+    };
+
+    struct oz cast[6];
+    int line,x;
+
+    strcpy(cast[0].actor,"Judy Garland");
+    cast[0].age = 17;
+    strcpy(cast[0].role,"Dorothy");
+   
+    strcpy(cast[1].actor,"Ray Bolger");
+    cast[1].age = 35;
+    strcpy(cast[1].role,"Scarecrow");
     
-    char actor2[] = "Ray Bolger";
-    int age2 = 35;
-    char role2[] = "Scarecrow";
+    strcpy(cast[2].actor,"Bert Lahr");
+    cast[2].age = 44;
+    strcpy(cast[2].role,"Cowardly Lion");
     
-    char actor3[] = "Bert Lahr";
-    int age3 = 44;
-    char role3[] = "Cowardly Lion";
+    strcpy(cast[3].actor,"Jack Haley");
+    cast[3].age = 40;
+    strcpy(cast[3].role,"Tin Woodsman");
     
-    char actor4[] = "Jack Haley";
-    int age4 = 40;
-    char role4[] = "Tin Woodsman";
+    strcpy(cast[4].actor,"Margaret Hamilton");
+    cast[4].age = 37;
+    strcpy(cast[4].role,"Wicked Witch");
     
-    
-    char actor5[] = "Margaret Hamilton";
-    int age5 = 37;
-    char role5[] = "Wicked Witch";
-    
-    char actor6[] = "Frank Morgan";
-    int age6 = 49;
-    char role6[] = "The Wizard";
-    
-    int line;
+    strcpy(cast[5].actor,"Frank Morgan");
+    cast[5].age = 49;
+    strcpy(cast[5].role,"The Wizard");
     
     puts("Wizard of Oz Database!\n");
 
     /* draw the table heading */
-    printf("%-20s %3s   %-20s\n","Actor","Age","Role");
+    printf("%-18s\t%3s\t%-15s\n","Actor","Age","Role");
     for(line=0;line<LINE_LENGTH;line++) putchar('-');
     putchar('\n');
 
     /* display the data */
-    printf("%-20s %3d   %-20s\n",actor1,age1,role1);
-    printf("%-20s %3d   %-20s\n",actor2,age2,role2);
-    printf("%-20s %3d   %-20s\n",actor3,age3,role3);
-    printf("%-20s %3d   %-20s\n",actor4,age4,role4);
-    printf("%-20s %3d   %-20s\n",actor5,age5,role5);
-    printf("%-20s %3d   %-20s\n",actor6,age6,role6);
+    for(x=0;x<6;x++)
+        printf("%-18s\t%3d\t%-15s\n",
+                cast[x].actor,\
+                cast[x].age,\
+                cast[x].role);
     return(0);
 }
