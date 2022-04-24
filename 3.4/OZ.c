@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 #define LINE_LENGTH 40
 
@@ -11,33 +10,16 @@ int main()
         char role[16];
     };
 
-    struct oz cast[6];
+    struct oz cast[6] = {
+        "Judy Garland", 17, "Dorothy",
+        "Ray Bolger", 35, "Scarecrow",
+        "Bert Lahr", 44, "Cowardly Lion",
+        "Jack Haley", 40, "Tin Woodsman",
+        "Margaret Hamilton", 37, "Wicked Witch",
+        "Frank Morgan", 49, "The Wizard"
+    };
     int line,x;
 
-    strcpy(cast[0].actor,"Judy Garland");
-    cast[0].age = 17;
-    strcpy(cast[0].role,"Dorothy");
-   
-    strcpy(cast[1].actor,"Ray Bolger");
-    cast[1].age = 35;
-    strcpy(cast[1].role,"Scarecrow");
-    
-    strcpy(cast[2].actor,"Bert Lahr");
-    cast[2].age = 44;
-    strcpy(cast[2].role,"Cowardly Lion");
-    
-    strcpy(cast[3].actor,"Jack Haley");
-    cast[3].age = 40;
-    strcpy(cast[3].role,"Tin Woodsman");
-    
-    strcpy(cast[4].actor,"Margaret Hamilton");
-    cast[4].age = 37;
-    strcpy(cast[4].role,"Wicked Witch");
-    
-    strcpy(cast[5].actor,"Frank Morgan");
-    cast[5].age = 49;
-    strcpy(cast[5].role,"The Wizard");
-    
     puts("Wizard of Oz Database!\n");
 
     /* draw the table heading */
