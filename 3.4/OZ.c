@@ -19,12 +19,22 @@ int main()
         "Frank Morgan", 49, "The Wizard"
     };
     struct oz temp;
-    int line,x;
+    int line,x,a,b;
 
-    /* Swap Margaret and Frank */
+    /* Swap Margaret and Frank 
     temp = cast[4];
     cast[4] = cast[5];
-    cast[5] = temp;
+    cast[5] = temp;*/
+
+    /* Sort the list by age */
+    for(a=0;a<6-1;a++)
+        for(b=a+1;b<6;b++)
+            if(cast[a].age > cast[b].age)
+            {
+                temp = cast[a];
+                cast[a] = cast[b];
+                cast[b] = temp;
+            }
 
     puts("Wizard of Oz Database!\n");
 
